@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/home";
+import Onboarding1 from "./components/onBoarding1";
+import Onboarding2 from "./components/onBoarding2";
+import Onboarding3 from "./components/onBoarding3";
+import { Toaster } from 'react-hot-toast';
+import Header from "./components/header";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Toaster position="top-center" />
+      <Router>
+        <Switch>
+          <Route exact path="/home">
+            <Header />
+            <Home />
+          </Route>
+          <Route exact path="/">
+            <Onboarding1 />
+          </Route>
+          <Route exact path="/onBoarding2">
+            <Onboarding2 />
+          </Route>
+          <Route exact path="/onBoarding3">
+            <Onboarding3 />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

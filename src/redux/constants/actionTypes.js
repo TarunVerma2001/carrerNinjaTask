@@ -1,0 +1,6 @@
+export const ActionTypes = {
+  SET_NAME: "SET_NAME",
+  SET_EMAIL: "SET_EMAIL",
+  SET_NUMBER: "SET_NUMBER",
+  TOGGLE_HOBBY: "TOGGLE_HOBBY",
+};
